@@ -5,3 +5,25 @@ body {
 .hidden {
     display: none;
 }
+
+h1, h2, p{
+	text-align: center;
+}
+
+h1{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+h2{
+	font-size: 14px;
+}
+
+p{
+	font-size: 12px;
+}
+
+.fb-comments{
+	margin-left: 250px;
+}
+
