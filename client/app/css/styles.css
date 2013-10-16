@@ -1,10 +1,28 @@
+html,
 body {
-    padding-top: 70px;
+    padding-top: 50px;
+    height: 90%;
+}
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+.MainForm{
+	background-color: #e9e9e9;
+	margin: auto;
+	height: 600px;
+	width: 650px;
+	padding: 10px;
+	padding-left: 200px;
+	padding-top: 10px;
+	border: solid 3px;
+	border-radius: 8px;
+	position: center;
 }
 
-.hidden {
-    display: none;
-}
 
 h1, h2, p{
 	text-align: center;
@@ -23,7 +41,21 @@ p{
 	font-size: 12px;
 }
 
-.fb-comments{
-	margin-left: 250px;
+
+#main
+{
+overflow:auto;
+padding-bottom:100px; /* this needs to be bigger than footer height*/
 }
 
+.footer
+{
+text-align: center;
+position: relative;
+
+height: 100px;
+clear:both;
+padding-top:40px;
+color:#fff;
+
+}

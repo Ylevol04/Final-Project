@@ -1,11 +1,22 @@
 <!doctype html>
 <html>
     <head>
-        <title>Project Title</title>
+        <title>Final Project</title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
     <body>
+        <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=183022588549935";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -21,6 +32,7 @@
                         <li class='menu-create item'><a href="javascript:void(0)">Create New</a></li>
                         <li class='menu-list item'><a href="javascript:void(0)">Show All</a></li>
                     </ul>
+
                     <ul class="nav navbar-nav navbar-right">
                         <li class='menu-loading'><a href="#">Loading...</a></li>
                         <li class="menu-user dropdown">
@@ -32,11 +44,17 @@
                         </li>
                     </ul>
                     <a href='#' class="btn btn-primary btn-login navbar-btn navbar-right">Log in</a>
+                    <form class="navbar-form navbar-right form-search" role="search" _lpchecked="1">
+                        <div class="form-group">
+                          <input type="text" class="form-control search-input" placeholder="Search">
+                        </div>
+                      </form>
                     </div>
                 </div>
             </div>
             <div class='container'>
-                    <div class='row app-content'>
+
+                <div class='row app-content'>
                 </div>
             </div>
         </div>
@@ -61,6 +79,8 @@
                             <th>Year</th>
                             <th>Title</th>
                             <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody class='thesis-list'>
@@ -73,16 +93,12 @@
             <tr data-id="{{Id}}">
                 <td>{{Year}}</td>
                 <td>{{Title}}</td>
-                <td><a href='#'>Edit</a></td>
+                <td>
+                    <a href='javascript:void(0)' class='btn-view'>View</a> &nbsp;
+                    <a href='javascript:void(0)' class='btn-edit'>Edit</a> &nbsp;
+                    <a href='javascript:void(0)' class='btn-delete'>Delete</a> &nbsp;
+                </td>
             </tr>
-        </script>
-
-        <script class = "beyow" id="tpl-thesis-view-item" type="text/x-handlebars-template">
-            <h1>{{Title}}</h1><br>
-            <h1>({{Year}})</h1><br>
-            <h2>{{Subtitle}}</h2><br><br>
-            <p>{{Description}}</p>
-            <div class="fb-comments" data-href="http://comicsanstms.appspot.com/thesis-{{Id}}" data-colorscheme="light" data-numposts="5" data-width="650"></div>
         </script>
 
 
@@ -111,14 +127,27 @@
                         <label for="description-input">Description</label>
                         <textarea id='description-input' name='Description' class="form-control" rows="3">{{Description}}</textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Save</button>
                     {{#if Id}}
-                    <button class="btn btn-default">Delete</button>
+                        <input id='subtitle-input' type="text" style='display:none;' name='Id' value='{{Id}}'>
+                        <button class="btn-cancel btn btn-default">Cancel</button>
                     {{/if}}
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </form>
+            </div>
+        </script>
+
+
+        <script id="tpl-thesis-detail" type="text/x-handlebars-template">
+            <div class="col-lg-8">
+                <h1>{{Year}} : {{Title}}</h1>
+                <p class="lead">{{Subtitle }}</p>
+                <hr>
+                <p>{{Description }}</p>
+                <hr>
+                <div class="fb-like" data-href="http://comicsanstms.appspot.com/" data-width="650" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="standard" data-action="like" data-show-faces="true" data-send="false"></div>
+                <div class="fb-comments" data-href="http://comicsanstms.appspot.com/" data-colorscheme="light" data-numposts="5" data-width="650"></div>
             </div>
         </script>
 
     </body>
 </html>
-
