@@ -6,6 +6,10 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
     <body>
+
+
+
+
         <div id="fb-root"></div>
             <script>(function(d, s, id) {
                   var js, fjs = d.getElementsByTagName(s)[0];
@@ -17,7 +21,12 @@
             </script>
 
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+
+
+
+
+
+        <div class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -52,6 +61,14 @@
                     </div>
                 </div>
             </div>
+
+
+            <div id="wrap">
+        <div id="main" class="container clear-top">
+            <div class="row">
+                <div class="span12">
+
+
             <div class='container'>
 
                 <div class='row app-content'>
@@ -78,8 +95,8 @@
                         <tr>
                             <th>Year</th>
                             <th>Title</th>
-                            <th></th>
-                            <th></th>
+                            <th>Ratings</th>
+                            <th>Category</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -93,6 +110,8 @@
             <tr data-id="{{Id}}">
                 <td>{{Year}}</td>
                 <td>{{Title}}</td>
+                <td>{{Ratings}}</td>
+                <td>{{Category}}</td>
                 <td>
                     <a href='javascript:void(0)' class='btn-view'>View</a> &nbsp;
                     <a href='javascript:void(0)' class='btn-edit'>Edit</a> &nbsp;
@@ -103,6 +122,7 @@
 
 
         <script id="tpl-thesis-form" type="text/x-handlebars-template">
+        <div class = "MainForm">
             <div class='col-md-7 thesis-form'>
                 <form role="form">
                     <div class="form-group">
@@ -115,6 +135,7 @@
                           <option value='2009' {{#compare Year '2009'}}selected{{/compare}}>2009</option>
                         </select>
                     </div>
+                   
                     <div class="form-group">
                         <label for="tite-input">Title</label>
                         <input id='title-input' type="text" class="form-control" name='Title' placeholder="Enter title.." value='{{Title}}'>
@@ -134,7 +155,8 @@
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </div>
-        </script>
+        </div>
+    </script>
 
 
         <script id="tpl-thesis-detail" type="text/x-handlebars-template">
@@ -148,6 +170,17 @@
                 <div class="fb-comments" data-href="http://comicsanstms.appspot.com/" data-colorscheme="light" data-numposts="5" data-width="650"></div>
             </div>
         </script>
+
+    
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <footer class="footer" style="background-color:#c2c2c2">
+        The dog goes Bow, The Cat goes Meeow ..
+        But what did the Fox Say?
+    </footer>
 
     </body>
 </html>
