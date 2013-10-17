@@ -4,12 +4,10 @@
         <title>Final Project</title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link href="css/stylish-portfolio.css" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body>
-
-
-
-
         <div id="fb-root"></div>
             <script>(function(d, s, id) {
                   var js, fjs = d.getElementsByTagName(s)[0];
@@ -22,11 +20,96 @@
 
 
 
+    <!-- Side Menu -->
+    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="icon-reorder"></i></a>
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav menu-crud">
+        <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="icon-remove"></i></a>
+        <li class="sidebar-brand"><a href="#">Thesis Library</a></li>
+        <li><a href="#top">Home</a></li>
+        <li class="menu-create item"><a href="javascript:void(0)">Create New</a></li>
+        <li class="menu-list item"><a href="javascript:void(0)">Show All</a></li>
+        <li><a href="#services">About</a></li>
+        <li><a href="javascript:void(0)" class = "btn-logout">Logout</a></li>
+      </ul>
+    </div>
+            <div class='container'>
+
+                <div class='row app-content'>
+                </div>
+            </div>
+    <!-- /Side Menu -->
+  
+
+
+<!-- Full Page Image Header Area  -->
+    <div id="top" class="header">
+      <div class="vert-text">
+        <h1>Thesis Library System</h1>
+        <h3>What does the Fox say? <em>Save all the thesis!</em></h3>
+            <form class="navbar-form form-search" role="search" _lpchecked="1">
+                <div class="form-group">
+                    <input type="text" class="form-control search-input" placeholder="Search">
+                </div>
+            </form>
+            <a href='#' class="btn btn-primary btn-login">Log in</a>
+ 
+      </div>
+    </div>
+<!-- /Full Page Image Header Area -->
 
 
 
+  
+    <!-- Services -->
+    <div id="services" class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 text-center">
+            <h2>About Us</h2>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-md-offset-2 text-center">
+            <div class="service-item">
+              <i class="service-icon icon-eye-open"></i>
+              <h4>Lovely Ann R. Castillo</h4>
+              <p> beYOU-tiful</p>
+              <a href="https://www.facebook.com/bluelai.zer0four"> Facebook</a>
+            </div>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="service-item">
+              <i class="service-icon icon-star-empty"></i>
+              <h4>Polytechnic University of the Philippines</h4>
+              <p>Sta. Mesa, Manila</p>
+            </div>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="service-item">
+              <i class="service-icon icon-cog"></i>
+              <h4>Computer Engineering Department</h4>
+              <p>NDC Campus, College of Engineering and Architechture</p>
+            </div>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="service-item">
+              <i class="service-icon icon-fire"></i>
+              <h4>Dexter Rapsing</h4>
+              <p>Rocket ship builder, Pizza Expert, Loves the Giants, Time Traveler ..</p>
+              <a href="https://www.facebook.com/drocksing">Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Services -->
 
-        <div class="navbar navbar-default">
+
+
+<!-- NavBar ->
+        <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -61,20 +144,13 @@
                     </div>
                 </div>
             </div>
-
-
-            <div id="wrap">
-        <div id="main" class="container clear-top">
-            <div class="row">
-                <div class="span12">
-
-
             <div class='container'>
 
                 <div class='row app-content'>
                 </div>
             </div>
         </div>
+<!-- /NavBar -->
 
         <!-- scripts -->
         <!-- =================== -->
@@ -95,8 +171,8 @@
                         <tr>
                             <th>Year</th>
                             <th>Title</th>
-                            <th>Ratings</th>
-                            <th>Category</th>
+                            <th></th>
+                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
@@ -110,8 +186,6 @@
             <tr data-id="{{Id}}">
                 <td>{{Year}}</td>
                 <td>{{Title}}</td>
-                <td>{{Ratings}}</td>
-                <td>{{Category}}</td>
                 <td>
                     <a href='javascript:void(0)' class='btn-view'>View</a> &nbsp;
                     <a href='javascript:void(0)' class='btn-edit'>Edit</a> &nbsp;
@@ -122,7 +196,6 @@
 
 
         <script id="tpl-thesis-form" type="text/x-handlebars-template">
-        <div class = "MainForm">
             <div class='col-md-7 thesis-form'>
                 <form role="form">
                     <div class="form-group">
@@ -135,7 +208,6 @@
                           <option value='2009' {{#compare Year '2009'}}selected{{/compare}}>2009</option>
                         </select>
                     </div>
-                   
                     <div class="form-group">
                         <label for="tite-input">Title</label>
                         <input id='title-input' type="text" class="form-control" name='Title' placeholder="Enter title.." value='{{Title}}'>
@@ -155,8 +227,7 @@
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </div>
-        </div>
-    </script>
+        </script>
 
 
         <script id="tpl-thesis-detail" type="text/x-handlebars-template">
@@ -171,16 +242,44 @@
             </div>
         </script>
 
-    
-                        
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <footer class="footer" style="background-color:#c2c2c2">
-        The dog goes Bow, The Cat goes Meeow ..
-        But what did the Fox Say?
-    </footer>
+
+<!-- Bootstrap core JavaScript -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <!-- Custom JavaScript for the Side Menu - Put in a custom JS file if you want to clean this up -->
+  <script>
+      $("#menu-close").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+  </script>
+  <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+  </script>
+  <script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+              || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+    </script>
+
 
     </body>
 </html>
