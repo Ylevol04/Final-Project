@@ -1,7 +1,8 @@
 html,
 body {
     height: 100%;
-    background-image: url("../img/bg.jpg");
+    background-image: url("../img/bg.jpg") !important; 
+    background-color: #82b8da;
 
 }
 #wrap {
